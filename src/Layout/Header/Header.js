@@ -60,102 +60,158 @@ function Header() {
             <Nav className="ml-auto">
               {hasToken ? (
                 <>
-                <Nav.Link href="/home" style={{ color: '#3498db' }}>Inicio</Nav.Link>
-                
+                <li className="nav-item">
+                    <a href="/home" className="nav-link" style={{ color: '#3498db' }}>
+                      Inicio
+                    </a>
+                </li>
+              
                 {userRole === 'Administrador' ?(
                 <>
-                <NavDropdown title="Usuarios" id="usuarios-dropdown">
-                  <NavDropdown.Item href="/createusuario" style={{ color: '#3498db' }}>Crear Usuario</NavDropdown.Item>
-                  <NavDropdown.Item href="/usuario" style={{ color: '#3498db' }}>Listar Usuarios</NavDropdown.Item>
-                  <NavDropdown.Item href="/createrol" style={{ color: '#3498db' }}>Crear rol</NavDropdown.Item>
-                  <NavDropdown.Item href="/rol" style={{ color: '#3498db' }}>Listar rol</NavDropdown.Item>
-                  
-                </NavDropdown>
-
-                <NavDropdown title="Socios" id="socios-dropdown">
-                  <NavDropdown.Item href="/createsocio" style={{ color: '#3498db' }}>Crear Socio</NavDropdown.Item>
-                  <NavDropdown.Item href="/socio" style={{ color: '#3498db' }}>Listar Socios</NavDropdown.Item>
-                </NavDropdown>
-
-                <NavDropdown title="Recaudaciones" id="recaudaciones-dropdown">
-                  <NavDropdown.Item href="/createpago" style={{ color: '#3498db' }}>Crear Pago</NavDropdown.Item>
-                  <NavDropdown.Item href="/pago" style={{ color: '#3498db' }}>Lista Pagos</NavDropdown.Item>
-                  <NavDropdown.Item href="/createrubro" style={{ color: '#3498db' }}>Crear rubro</NavDropdown.Item>
-                  <NavDropdown.Item href="/rubro" style={{ color: '#3498db' }}>Lista rubro</NavDropdown.Item>
-                </NavDropdown>
-
-                <NavDropdown title="Reuniones" id="reuniones-dropdown">
-                  <NavDropdown.Item href="/createreunion" style={{ color: '#3498db' }}>Crear Reunion</NavDropdown.Item>
-                  <NavDropdown.Item href="/reunion" style={{ color: '#3498db' }}>Lista reunion</NavDropdown.Item>
-                </NavDropdown>
-
-                <NavDropdown title="Gastos" id="gastos-dropdown">
-                  <NavDropdown.Item href="/creategasto" style={{ color: '#3498db' }}>Crear gasto</NavDropdown.Item>
-                  <NavDropdown.Item href="/gasto" style={{ color: '#3498db' }}>Lista gasto</NavDropdown.Item>
-                </NavDropdown>
-
-                <NavDropdown title="Reportes" id="reportes-dropdown">
-                  <NavDropdown.Item href="/reporte" style={{ color: '#3498db' }}>Lista reporte</NavDropdown.Item>
-                </NavDropdown>
-
-                <NavDropdown title="Documentos" id="documentos-dropdown">
-                  <NavDropdown.Item href="/createdocument" style={{ color: '#3498db' }}>Subir nuevo documento</NavDropdown.Item>
-                  <NavDropdown.Item href="/document" style={{ color: '#3498db' }}>Lista documento</NavDropdown.Item>
-                </NavDropdown>
+                <li className="nav-item dropdown">
+                  <a className="nav-link dropdown-toggle" href="#" id="usuarios-dropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{ color: '#3498db' }}>
+                      Usuarios
+                  </a>
+                        <div className="dropdown-menu" aria-labelledby="usuarios-dropdown">
+                          <a className="dropdown-item" href="/createusuario" style={{ color: '#3498db' }}>Crear Usuario</a>
+                          <a className="dropdown-item" href="/usuario" style={{ color: '#3498db' }}>Listar Usuarios</a>
+                          <a className="dropdown-item" href="/createrol" style={{ color: '#3498db' }}>Crear rol</a>
+                          <a className="dropdown-item" href="/rol" style={{ color: '#3498db' }}>Listar rol</a>
+                        </div>
+                </li>
+                <li className="nav-item dropdown">
+                  <a className="nav-link dropdown-toggle" href="#" id="socios-dropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{ color: '#3498db' }}>
+                      Socios
+                  </a>
+                        <div className="dropdown-menu" aria-labelledby="socios-dropdown">
+                          <a className="dropdown-item" href="/createsocio" style={{ color: '#3498db' }}>Crear Socio</a>
+                          <a className="dropdown-item" href="/socio" style={{ color: '#3498db' }}>Listar Socios</a>
+                        </div>
+                </li>
+                <li className="nav-item dropdown">
+                  <a className="nav-link dropdown-toggle" href="#" id="recaudaciones-dropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{ color: '#3498db' }}>
+                      Recaudaciones
+                  </a>
+                        <div className="dropdown-menu" aria-labelledby="recaudaciones-dropdown">
+                          <a className="dropdown-item" href="/createpago" style={{ color: '#3498db' }}>Crear Pago</a>
+                          <a className="dropdown-item" href="/pago" style={{ color: '#3498db' }}>Lista Pagos</a>
+                          <a className="dropdown-item" href="/createrubro" style={{ color: '#3498db' }}>Crear rubro</a>
+                          <a className="dropdown-item" href="/rubro" style={{ color: '#3498db' }}>Lista rubro</a>
+                        </div>
+                </li>
+                <li className="nav-item dropdown">
+                  <a className="nav-link dropdown-toggle" href="#" id="reuniones-dropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{ color: '#3498db' }}>
+                      Reuniones
+                  </a>
+                        <div className="dropdown-menu" aria-labelledby="reuniones-dropdown">
+                          <a className="dropdown-item" href="/createreunion" style={{ color: '#3498db' }}>Crear Reunion</a>
+                          <a className="dropdown-item" href="/reunion" style={{ color: '#3498db' }}>Lista reunion</a>
+                        </div>
+                </li>
+                
+                <li className="nav-item dropdown">
+                  <a className="nav-link dropdown-toggle" href="#" id="gastos-dropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{ color: '#3498db' }}>
+                      Gastos
+                  </a>
+                        <div className="dropdown-menu" aria-labelledby="gastos-dropdown">
+                          <a className="dropdown-item" href="/creategasto" style={{ color: '#3498db' }}>Crear gasto</a>
+                          <a className="dropdown-item" href="/gasto" style={{ color: '#3498db' }}>Lista gasto</a>
+                        </div>
+                </li>
+                <li className="nav-item dropdown">
+                  <a className="nav-link dropdown-toggle" href="#" id="reportes-dropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{ color: '#3498db' }}>
+                      Reportes
+                  </a>
+                        <div className="dropdown-menu" aria-labelledby="reportes-dropdown">
+                          <a className="dropdown-item" href="/reporte" style={{ color: '#3498db' }}>Lista reporte</a>
+                        </div>
+                </li>
+                <li className="nav-item dropdown">
+                  <a className="nav-link dropdown-toggle" href="#" id="documentos-dropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{ color: '#3498db' }}>
+                      Documentos
+                  </a>
+                        <div className="dropdown-menu" aria-labelledby="documentos-dropdown">
+                          <a className="dropdown-item" href="/createdocument" style={{ color: '#3498db' }}>Subir nuevo documento</a>
+                          <a className="dropdown-item" href="/document" style={{ color: '#3498db' }}>Lista documento</a>
+                        </div>
+                </li>
                 </>
                 ):(
                 <>
-                <NavDropdown title="Socios" id="socios-dropdown">
-                  <NavDropdown.Item href="/createsocio" style={{ color: '#3498db' }}>Crear Socio</NavDropdown.Item>
-                  <NavDropdown.Item href="/socio" style={{ color: '#3498db' }}>Listar Socios</NavDropdown.Item>
-                </NavDropdown>
-
-                <NavDropdown title="Recaudaciones" id="recaudaciones-dropdown">
-                  <NavDropdown.Item href="/createpago" style={{ color: '#3498db' }}>Crear Pago</NavDropdown.Item>
-                  <NavDropdown.Item href="/pago" style={{ color: '#3498db' }}>Lista Pagos</NavDropdown.Item>
-                  <NavDropdown.Item href="/createrubro" style={{ color: '#3498db' }}>Crear rubro</NavDropdown.Item>
-                  <NavDropdown.Item href="/rubro" style={{ color: '#3498db' }}>Lista rubro</NavDropdown.Item>
-                </NavDropdown>
-
-                <NavDropdown title="Reuniones" id="reuniones-dropdown">
-                  <NavDropdown.Item href="/createreunion" style={{ color: '#3498db' }}>Crear Reunion</NavDropdown.Item>
-                  <NavDropdown.Item href="/reunion" style={{ color: '#3498db' }}>Lista reunion</NavDropdown.Item>
-                  <NavDropdown.Item href="/createrubro" style={{ color: '#3498db' }}>Asistencia</NavDropdown.Item>
-                </NavDropdown>
-
-                <NavDropdown title="Gastos" id="gastos-dropdown">
-                  <NavDropdown.Item href="/creategasto" style={{ color: '#3498db' }}>Crear gasto</NavDropdown.Item>
-                  <NavDropdown.Item href="/gasto" style={{ color: '#3498db' }}>Lista gasto</NavDropdown.Item>
-                  <NavDropdown.Item href="/createrubro" style={{ color: '#3498db' }}>Crear rubro</NavDropdown.Item>
-                  <NavDropdown.Item href="/rubro" style={{ color: '#3498db' }}>Lista rubro</NavDropdown.Item>
-                </NavDropdown>
-
-                <NavDropdown title="Reportes" id="reportes-dropdown">
-                  <NavDropdown.Item href="/reporte" style={{ color: '#3498db' }}>Lista reporte</NavDropdown.Item>
-                </NavDropdown>
-
-                <NavDropdown title="Documentos" id="documentos-dropdown">
-                  <NavDropdown.Item href="/createdocument" style={{ color: '#3498db' }}>Subir nuevo documento</NavDropdown.Item>
-                  <NavDropdown.Item href="/document" style={{ color: '#3498db' }}>Lista documento</NavDropdown.Item>
-                </NavDropdown>
+                <li className="nav-item dropdown">
+                  <a className="nav-link dropdown-toggle" href="#" id="socios-dropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{ color: '#3498db' }}>
+                      Socios
+                  </a>
+                        <div className="dropdown-menu" aria-labelledby="socios-dropdown">
+                          <a className="dropdown-item" href="/createsocio" style={{ color: '#3498db' }}>Crear Socio</a>
+                          <a className="dropdown-item" href="/socio" style={{ color: '#3498db' }}>Listar Socios</a>
+                        </div>
+                </li>
+                <li className="nav-item dropdown">
+                  <a className="nav-link dropdown-toggle" href="#" id="recaudaciones-dropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{ color: '#3498db' }}>
+                      Recaudaciones
+                  </a>
+                        <div className="dropdown-menu" aria-labelledby="recaudaciones-dropdown">
+                          <a className="dropdown-item" href="/createpago" style={{ color: '#3498db' }}>Crear Pago</a>
+                          <a className="dropdown-item" href="/pago" style={{ color: '#3498db' }}>Lista Pagos</a>
+                          <a className="dropdown-item" href="/createrubro" style={{ color: '#3498db' }}>Crear rubro</a>
+                          <a className="dropdown-item" href="/rubro" style={{ color: '#3498db' }}>Lista rubro</a>
+                        </div>
+                </li>
+                <li className="nav-item dropdown">
+                  <a className="nav-link dropdown-toggle" href="#" id="reuniones-dropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{ color: '#3498db' }}>
+                      Reuniones
+                  </a>
+                        <div className="dropdown-menu" aria-labelledby="reuniones-dropdown">
+                          <a className="dropdown-item" href="/createreunion" style={{ color: '#3498db' }}>Crear Reunion</a>
+                          <a className="dropdown-item" href="/reunion" style={{ color: '#3498db' }}>Lista reunion</a>
+                        </div>
+                </li>
+              
+                <li className="nav-item dropdown">
+                  <a className="nav-link dropdown-toggle" href="#" id="gastos-dropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{ color: '#3498db' }}>
+                      Gastos
+                  </a>
+                        <div className="dropdown-menu" aria-labelledby="gastos-dropdown">
+                          <a className="dropdown-item" href="/creategasto" style={{ color: '#3498db' }}>Crear gasto</a>
+                          <a className="dropdown-item" href="/gasto" style={{ color: '#3498db' }}>Lista gasto</a>
+                        </div>
+                </li>
+                <li className="nav-item dropdown">
+                  <a className="nav-link dropdown-toggle" href="#" id="reportes-dropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{ color: '#3498db' }}>
+                      Reportes
+                  </a>
+                        <div className="dropdown-menu" aria-labelledby="reportes-dropdown">
+                          <a className="dropdown-item" href="/reporte" style={{ color: '#3498db' }}>Lista reporte</a>
+                        </div>
+                </li>
+                <li className="nav-item dropdown">
+                  <a className="nav-link dropdown-toggle" href="#" id="documentos-dropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{ color: '#3498db' }}>
+                      Documentos
+                  </a>
+                        <div className="dropdown-menu" aria-labelledby="documentos-dropdown">
+                          <a className="dropdown-item" href="/createdocument" style={{ color: '#3498db' }}>Subir nuevo documento</a>
+                          <a className="dropdown-item" href="/document" style={{ color: '#3498db' }}>Lista documento</a>
+                        </div>
+                </li>
                 </>
                 )}
 
   <div style={{ marginLeft: 'auto', marginRight: '0' }}>
-  <NavDropdown
-    title={<span><i className="fas fa-user-circle profile-icon" style={{ marginRight: '5px' }}></i>{userName}</span>}
-    id="user-dropdown"
-    style={{ color: '#3498db' }}
-  >
-    <NavDropdown.Divider />
-    <NavDropdown.Item
-      href="#"
-      style={{ color: '#e74c3c' }}
-      onClick={handdleLogout}
-    >
-      Cerrar sesión
-    </NavDropdown.Item>
-  </NavDropdown>
+  <li className="nav-item">
+                    <div className="user-profile">
+                      <span>
+                        <i className="fas fa-user-circle profile-icon" style={{ marginRight: '5px' }}></i>
+                        {userName}
+                      </span>
+                      <div className="user-dropdown">
+                        <div className="dropdown-divider"></div>
+                        <a href="#" className="dropdown-item" style={{ color: '#e74c3c' }} onClick={handdleLogout}>
+                          Cerrar sesión
+                        </a>
+                      </div>
+                    </div>
+                  </li>
 </div>
                 </>
               ):(
